@@ -24,7 +24,7 @@ import victoria.spiregremy.corpapp.ui.state.DataUiState
 import victoria.spiregremy.corpapp.ui.theme.LocalDimens
 import victoria.spiregremy.corpapp.ui.viewmodel.CheckoutViewModel
 import org.koin.androidx.compose.koinViewModel
-import java.time.LocalDateTime
+import java.time.LocalDate
 
 @Composable
 fun VIECPCheckoutScreen(
@@ -58,14 +58,16 @@ fun VIECPCheckoutScreen(
         customerLastName = viewModel.customerLastName,
         customerEmail = viewModel.customerEmail,
         isEmailInvalid = emailInvalidState,
-        selectedDateTime = viewModel.customerDateTime,
+        selectedDate = viewModel.customerDate,
+        selectedHour = viewModel.customerHour,
         modifier = modifier,
         focusManager = focusManager,
         isButtonEnabled = isButtonEnabled,
         onFirstNameChanged = viewModel::updateCustomerFirstName,
         onLastNameChanged = viewModel::updateCustomerLastName,
         onEmailChanged = viewModel::updateCustomerEmail,
-        onDateTimeSelected = viewModel::updateCustomerDateTime,
+        onDateSelected = viewModel::updateCustomerDate,
+        onHourSelected = viewModel::updateCustomerHour,
         onPlaceBookingButtonClick = { viewModel.placeBooking(serviceId) }
     )
 }
@@ -76,14 +78,16 @@ private fun CheckoutContent(
     customerLastName: String,
     customerEmail: String,
     isEmailInvalid: Boolean,
-    selectedDateTime: LocalDateTime?,
+    selectedDate: LocalDate,
+    selectedHour: Int?,
     modifier: Modifier = Modifier,
     focusManager: FocusManager,
     isButtonEnabled: Boolean,
     onFirstNameChanged: (String) -> Unit,
     onLastNameChanged: (String) -> Unit,
     onEmailChanged: (String) -> Unit,
-    onDateTimeSelected: (LocalDateTime) -> Unit,
+    onDateSelected: (LocalDate) -> Unit,
+    onHourSelected: (Int) -> Unit,
     onPlaceBookingButtonClick: () -> Unit,
 ) {
     val dimens = LocalDimens.current
@@ -106,13 +110,15 @@ private fun CheckoutContent(
             customerLastName = customerLastName,
             customerEmail = customerEmail,
             isEmailInvalid = isEmailInvalid,
-            selectedDateTime = selectedDateTime,
+            selectedDate = selectedDate,
+            selectedHour = selectedHour,
             modifier = Modifier.weight(1f),
             focusManager = focusManager,
             onFirstNameChanged = onFirstNameChanged,
             onLastNameChanged = onLastNameChanged,
             onEmailChanged = onEmailChanged,
-            onDateTimeSelected = onDateTimeSelected,
+            onDateSelected = onDateSelected,
+            onHourSelected = onHourSelected,
         )
 
         HorizontalDivider(

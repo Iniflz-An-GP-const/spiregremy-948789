@@ -47,6 +47,7 @@
     <string name="checkout_text_field_email">E-Mail</string>
     <string name="checkout_email_supporting_text">Die Buchungsbestätigung geht an diese Adresse</string>
     <string name="checkout_email_error_text">Geben Sie eine gültige E-Mail ein, z. B. name@example.com</string>
+    <string name="checkout_text_field_date">Datum</string>
     <string name="checkout_text_field_date_time">Datum &amp; Uhrzeit</string>
     <string name="checkout_date_time_placeholder">Datum und Uhrzeit wählen</string>
     <string name="checkout_date_time_dialog_time_label">Verfügbare Zeiten (8:00–16:00)</string>
@@ -71,4 +72,5 @@
     <string name="settings_screen_version_label">Version</string>
     <string name="settings_screen_company_label">Unternehmen</string>
     <string name="settings_screen_customer_support_label">Kundensupport</string>
+    <string name="settings_screen_copyright">© %1$d %2$s. Alle Rechte vorbehalten.</string>
 </resources>

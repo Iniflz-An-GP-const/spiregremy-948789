@@ -15,7 +15,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import java.time.LocalDate
 import java.time.LocalDateTime
+import java.time.LocalTime
 
 class CheckoutViewModel(
     private val bookingRepository: BookingRepository,
@@ -37,11 +39,17 @@ class CheckoutViewModel(
     var customerEmail by mutableStateOf("")
         private set
 
-    // Nullable, not defaulted to "now": there is no valid default booking
-    // time (see `BookingWindow`), so "unset" has to be a real, distinct
-    // state the user must resolve, same as the empty-string fields above.
-    var customerDateTime by mutableStateOf<LocalDateTime?>(null)
+    // Defaults to the first bookable day and its first open hour slot, so a
+    // time is always selected; the hour only becomes null if the chosen day
+    // has no open slot left.
+    var customerDate by mutableStateOf(BookingWindow.firstBookableDate())
         private set
+
+    var customerHour by mutableStateOf(BookingWindow.firstAvailableHour(customerDate))
+        private set
+
+    val customerDateTime: LocalDateTime?
+        get() = customerHour?.let { hour -> LocalDateTime.of(customerDate, LocalTime.of(hour, 0)) }
 
     fun updateCustomerFirstName(input: String) {
         customerFirstName = input
@@ -58,8 +66,18 @@ class CheckoutViewModel(
         }
     }
 
-    fun updateCustomerDateTime(dateTime: LocalDateTime) {
-        customerDateTime = dateTime
+    fun updateCustomerDate(date: LocalDate) {
+        customerDate = date
+        val hour = customerHour
+        if (hour == null || !BookingWindow.isValid(date, hour)) {
+            customerHour = BookingWindow.firstAvailableHour(date)
+        }
+    }
+
+    fun updateCustomerHour(hour: Int) {
+        if (BookingWindow.isValid(customerDate, hour)) {
+            customerHour = hour
+        }
     }
 
     fun placeBooking(serviceId: Int) {

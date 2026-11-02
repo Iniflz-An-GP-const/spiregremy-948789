@@ -111,7 +111,7 @@ private fun OnboardingPage(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        OnboardingIcon(icons = content.icons)
+        OnboardingIcon(imageUrl = content.imageUrl)
 
         Spacer(modifier = Modifier.height(dimens.sectionGap))
 

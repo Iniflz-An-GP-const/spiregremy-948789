@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navDeepLink
 import androidx.navigation.toRoute
 import victoria.spiregremy.corpapp.ui.composable.screen.bookings.VIECPBookingsScreen
 import victoria.spiregremy.corpapp.ui.composable.screen.checkout.VIECPCheckoutScreen
@@ -58,7 +59,9 @@ fun AppNavHost(
             )
         }
 
-        composable<NavRoute.Home> {
+        composable<NavRoute.Home>(
+            deepLinks = listOf(navDeepLink { uriPattern = "spiregremy://app/home" })
+        ) {
             VIECPHomeScreen(
                 onNavigateToServiceDetails = { serviceId: Int ->
                     navController.navigate(
@@ -68,7 +71,9 @@ fun AppNavHost(
             )
         }
 
-        composable<NavRoute.ServiceDetails> { backStackEntry ->
+        composable<NavRoute.ServiceDetails>(
+            deepLinks = listOf(navDeepLink<NavRoute.ServiceDetails>(basePath = "spiregremy://app/service"))
+        ) { backStackEntry ->
             val serviceDetails: NavRoute.ServiceDetails = backStackEntry.toRoute()
             VIECPServiceDetailsScreen(
                 serviceId = serviceDetails.serviceId,
@@ -80,7 +85,9 @@ fun AppNavHost(
             )
         }
 
-        composable<NavRoute.Checkout> { backStackEntry ->
+        composable<NavRoute.Checkout>(
+            deepLinks = listOf(navDeepLink<NavRoute.Checkout>(basePath = "spiregremy://app/checkout"))
+        ) { backStackEntry ->
             val checkout: NavRoute.Checkout = backStackEntry.toRoute()
             VIECPCheckoutScreen(
                 serviceId = checkout.serviceId,
@@ -95,11 +102,15 @@ fun AppNavHost(
             )
         }
 
-        composable<NavRoute.Bookings> {
+        composable<NavRoute.Bookings>(
+            deepLinks = listOf(navDeepLink { uriPattern = "spiregremy://app/bookings" })
+        ) {
             VIECPBookingsScreen()
         }
 
-        composable<NavRoute.Settings> {
+        composable<NavRoute.Settings>(
+            deepLinks = listOf(navDeepLink { uriPattern = "spiregremy://app/settings" })
+        ) {
             VIECPSettingsScreen()
         }
     }

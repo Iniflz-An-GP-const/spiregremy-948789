@@ -27,10 +27,11 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import victoria.spiregremy.corpapp.R
-import victoria.spiregremy.corpapp.ui.composable.screen.checkout.datetime.BookingDateTimeField
+import victoria.spiregremy.corpapp.ui.composable.screen.checkout.datetime.BookingDateField
+import victoria.spiregremy.corpapp.ui.composable.screen.checkout.datetime.BookingTimeSlots
 import victoria.spiregremy.corpapp.ui.composable.screen.checkout.field.CheckoutTextField
 import victoria.spiregremy.corpapp.ui.theme.LocalDimens
-import java.time.LocalDateTime
+import java.time.LocalDate
 
 @Composable
 fun CheckoutForm(
@@ -38,13 +39,15 @@ fun CheckoutForm(
     customerLastName: String,
     customerEmail: String,
     isEmailInvalid: Boolean,
-    selectedDateTime: LocalDateTime?,
+    selectedDate: LocalDate,
+    selectedHour: Int?,
     modifier: Modifier = Modifier,
     focusManager: FocusManager,
     onFirstNameChanged: (String) -> Unit,
     onLastNameChanged: (String) -> Unit,
     onEmailChanged: (String) -> Unit,
-    onDateTimeSelected: (LocalDateTime) -> Unit,
+    onDateSelected: (LocalDate) -> Unit,
+    onHourSelected: (Int) -> Unit,
 ) {
     val dimens = LocalDimens.current
 
@@ -136,10 +139,19 @@ fun CheckoutForm(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            BookingDateTimeField(
-                selectedDateTime = selectedDateTime,
+            BookingDateField(
+                selectedDate = selectedDate,
                 modifier = Modifier.fillMaxWidth(),
-                onDateTimeSelected = onDateTimeSelected,
+                onDateSelected = onDateSelected,
+            )
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            BookingTimeSlots(
+                selectedDate = selectedDate,
+                selectedHour = selectedHour,
+                modifier = Modifier.fillMaxWidth(),
+                onHourSelected = onHourSelected,
             )
         }
     }

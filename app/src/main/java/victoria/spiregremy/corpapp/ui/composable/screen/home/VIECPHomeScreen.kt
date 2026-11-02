@@ -132,7 +132,7 @@ private fun ServicesPopulated(
 
         item {
             SectionTitle(
-                text = stringResource(R.string.home_services_title),
+                text = stringResource(selectedCategory?.titleRes ?: R.string.home_services_title),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = dimens.screenPadding)

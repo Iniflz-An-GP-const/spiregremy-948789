@@ -47,6 +47,7 @@
     <string name="checkout_text_field_email">Correo</string>
     <string name="checkout_email_supporting_text">La confirmación de reserva se enviará a esta dirección</string>
     <string name="checkout_email_error_text">Introduce un correo válido, por ejemplo name@example.com</string>
+    <string name="checkout_text_field_date">Fecha</string>
     <string name="checkout_text_field_date_time">Fecha y hora</string>
     <string name="checkout_date_time_placeholder">Selecciona fecha y hora</string>
     <string name="checkout_date_time_dialog_time_label">Horas disponibles (8:00–16:00)</string>
@@ -71,4 +72,5 @@
     <string name="settings_screen_version_label">Versión</string>
     <string name="settings_screen_company_label">Empresa</string>
     <string name="settings_screen_customer_support_label">Atención al cliente</string>
+    <string name="settings_screen_copyright">© %1$d %2$s. Todos los derechos reservados.</string>
 </resources>

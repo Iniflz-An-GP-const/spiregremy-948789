@@ -47,6 +47,7 @@
     <string name="checkout_text_field_email">ईमेल</string>
     <string name="checkout_email_supporting_text">बुकिंग की पुष्टि इस पते पर जाएगी</string>
     <string name="checkout_email_error_text">मान्य ईमेल दें, जैसे name@example.com</string>
+    <string name="checkout_text_field_date">तारीख</string>
     <string name="checkout_text_field_date_time">तारीख और समय</string>
     <string name="checkout_date_time_placeholder">तारीख और समय चुनें</string>
     <string name="checkout_date_time_dialog_time_label">उपलब्ध समय (8:00–16:00)</string>
@@ -71,4 +72,5 @@
     <string name="settings_screen_version_label">संस्करण</string>
     <string name="settings_screen_company_label">कंपनी</string>
     <string name="settings_screen_customer_support_label">ग्राहक सहायता</string>
+    <string name="settings_screen_copyright">© %1$d %2$s. सर्वाधिकार सुरक्षित।</string>
 </resources>

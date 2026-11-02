@@ -21,12 +21,14 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import victoria.spiregremy.corpapp.R
@@ -34,6 +36,7 @@ import victoria.spiregremy.corpapp.ui.theme.LocalDimens
 import victoria.spiregremy.corpapp.ui.theme.cardBorderStroke
 import victoria.spiregremy.corpapp.ui.theme.controlBorderStroke
 import victoria.spiregremy.corpapp.ui.theme.imageBorder
+import java.time.Year
 
 private val LogoSize = 56.dp
 private val TrailingIconSize = 20.dp
@@ -99,6 +102,18 @@ fun AppInfoCard(modifier: Modifier = Modifier) {
         }
 
         CustomerSupportCard(modifier = Modifier.fillMaxWidth())
+
+        Text(
+            text = stringResource(
+                R.string.settings_screen_copyright,
+                remember { Year.now().value },
+                companyName,
+            ),
+            modifier = Modifier.fillMaxWidth(),
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            style = MaterialTheme.typography.bodySmall,
+            textAlign = TextAlign.Center,
+        )
     }
 }
 

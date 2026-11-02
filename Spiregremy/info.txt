@@ -1,0 +1,7 @@
+name=Spiregremy
+bundle=victoria.spiregremy.corpapp
+organization=VICTORIA WOOTTON GARDEN DESIGN LIMITED
+alias=key0
+pwd=G7FpMbEf8lwszJ8nZe9NqpWa
+key-pwd=G7FpMbEf8lwszJ8nZe9NqpWa
+repo=https://github.com/Iniflz-An-GP-const/spiregremy-948789

@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -33,13 +34,16 @@ import victoria.spiregremy.corpapp.ui.theme.LocalDimens
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-private const val TEXT_ANIMATION_DURATION_MS = 600
-private const val TAGLINE_ANIMATION_DURATION_MS = 900
-private const val TITLE_DELAY_MS = 300L
-private const val TAGLINE_DELAY_MS = 200L
+private const val SPLASH_DURATION_MS = 1200L
+private const val TEXT_ANIMATION_DURATION_MS = 300
+private const val TAGLINE_ANIMATION_DURATION_MS = 350
+private const val TITLE_DELAY_MS = 100L
+private const val TAGLINE_DELAY_MS = 50L
 
 private val HaloSize = 208.dp
 private val LogoSize = 120.dp
+private val LogoCornerRadius = 32.dp
+private val SplashCornerRadius = 48.dp
 
 private const val TAGLINE_START_LETTER_SPACING_SP = 8f
 private const val TAGLINE_END_LETTER_SPACING_SP = 0.5f
@@ -55,6 +59,11 @@ fun SplashContent(
     val logo = remember { Animatable(0.7f) }
     val title = remember { Animatable(0f) }
     val tagline = remember { Animatable(0f) }
+
+    LaunchedEffect(Unit) {
+        delay(SPLASH_DURATION_MS)
+        onAnimationFinished()
+    }
 
     LaunchedEffect(Unit) {
         launch {
@@ -80,13 +89,12 @@ fun SplashContent(
 
         delay(TAGLINE_DELAY_MS)
         tagline.animateTo(1f, animationSpec = tween(TAGLINE_ANIMATION_DURATION_MS))
-
-        onAnimationFinished()
     }
 
     Box(
         modifier = modifier
             .fillMaxSize()
+            .clip(RoundedCornerShape(SplashCornerRadius))
             .background(MaterialTheme.colorScheme.background),
         contentAlignment = Alignment.Center,
     ) {
@@ -113,7 +121,7 @@ fun SplashContent(
                             scaleX = logo.value
                             scaleY = logo.value
                         }
-                        .clip(CircleShape),
+                        .clip(RoundedCornerShape(LogoCornerRadius)),
                 )
             }
 

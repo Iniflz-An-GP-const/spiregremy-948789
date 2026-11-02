@@ -18,6 +18,7 @@ import victoria.spiregremy.corpapp.ui.composable.approot.matchesAnyRoute
 import victoria.spiregremy.corpapp.ui.composable.approot.topbar.canNavigateBackRoutes
 import victoria.spiregremy.corpapp.ui.composable.approot.topbar.topBarTitleRes
 import victoria.spiregremy.corpapp.ui.theme.ControlDivider
+import victoria.spiregremy.corpapp.ui.theme.Primary
 import victoria.spiregremy.corpapp.ui.theme.StatusBarIconsFor
 
 private const val DividerAlpha = 0.4f
@@ -31,7 +32,7 @@ fun AppTopBar(
     val canNavigateBack = currentDestination.matchesAnyRoute(canNavigateBackRoutes)
     val containerColor = MaterialTheme.colorScheme.primaryContainer
 
-    StatusBarIconsFor(containerColor)
+    StatusBarIconsFor(Primary)
 
     Column {
         TopAppBar(
