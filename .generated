@@ -1,0 +1,31 @@
+AssetBasedConstructor
+donor: ServiceAppDonor (app.service.donor)
+project: Spiregremy (victoria.spiregremy.corpapp)
+prefix: VIECP
+seed: -8568126489149956828
+app/src/main/java/app/service/donor/ui/composable/approot/bottombar -> v_tinted
+app/src/main/java/app/service/donor/ui/composable/approot/topbar -> v_tinted
+app/src/main/java/app/service/donor/ui/composable/screen/bookings/card -> v_booking_card_1
+app/src/main/java/app/service/donor/ui/composable/screen/bookings/dialog -> v_cancel_booking_dialog_1
+app/src/main/java/app/service/donor/ui/composable/screen/checkout/button -> v_checkout_button_1
+app/src/main/java/app/service/donor/ui/composable/screen/checkout/field -> v_checkout_field_3
+app/src/main/java/app/service/donor/ui/composable/screen/checkout/form -> v_checkout_form_3
+app/src/main/java/app/service/donor/ui/composable/screen/home/card -> v_card_medium6
+app/src/main/java/app/service/donor/ui/composable/screen/home/filter -> v_filter4
+app/src/main/java/app/service/donor/ui/composable/screen/home/slider -> v_slider1
+app/src/main/java/app/service/donor/ui/composable/screen/onboarding/controls -> v_onboarding_controls_2
+app/src/main/java/app/service/donor/ui/composable/screen/onboarding/icon -> v_onboarding_icon_7
+app/src/main/java/app/service/donor/ui/composable/screen/onboarding/text -> v_onboarding_text_1
+app/src/main/java/app/service/donor/ui/composable/screen/servicedetails/benefits -> v_servicedetails_benefits_14
+app/src/main/java/app/service/donor/ui/composable/screen/servicedetails/button -> v_servicedetails_button_3
+app/src/main/java/app/service/donor/ui/composable/screen/servicedetails/image -> v_servicedetails_image_3
+app/src/main/java/app/service/donor/ui/composable/screen/servicedetails/includedlist -> v_servicedetails_includedlist_1
+app/src/main/java/app/service/donor/ui/composable/screen/servicedetails/layout -> v_servicedetails_layout_3
+app/src/main/java/app/service/donor/ui/composable/screen/servicedetails/summary -> v_servicedetails_summary_2
+app/src/main/java/app/service/donor/ui/composable/screen/settings/card -> v_settings_card_2
+app/src/main/java/app/service/donor/ui/composable/screen/shared/loadingplaceholder -> v_loadingplaceholder_2
+app/src/main/java/app/service/donor/ui/composable/screen/shared/sectiontitle -> v_section_title_7
+app/src/main/java/app/service/donor/ui/composable/screen/splash -> v_splash_3
+app/src/main/java/app/service/donor/ui/theme -> v_cp1772
+app/src/main/java/app/service/donor/ui/theme/dimens -> v_airy
+app/src/main/java/app/service/donor/ui/theme/typography -> v_font_editorial
