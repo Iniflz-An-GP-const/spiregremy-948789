@@ -3,10 +3,10 @@
 
     <!-- shared -->
     <string name="price">$%1$.2f</string>
-    <string name="price_per_hour">$%1$.2f / per hour</string>
+    <string name="price_per_hour">$%1$.2f / hour</string>
 
     <!-- top bar titles -->
-    <string name="viecp_top_bar_home_title">App Title</string>
+    <string name="viecp_top_bar_home_title">Consulting</string>
     <string name="viecp_top_bar_bookings_title">Bookings</string>
     <string name="viecp_top_bar_checkout_title">Checkout</string>
     <string name="viecp_top_bar_settings_title">Settings</string>
@@ -20,17 +20,17 @@
 
     <!-- splash screen -->
     <string name="viecp_app_logo_description">App logo</string>
-    <string name="splash_screen_tagline">Expert guidance you can rely on</string>
+    <string name="splash_screen_tagline">Build a stronger organization</string>
 
     <!-- onboarding screen -->
     <string name="viecp_page_expertise_title">Expert Consultants</string>
-    <string name="viecp_page_expertise_description">Work with vetted professionals in business, finance, and IT who bring real industry experience to every session.</string>
+    <string name="viecp_page_expertise_description">Work with experienced management consultants who bring practical organizational expertise to every session.</string>
 
     <string name="viecp_page_reliability_title">Reliable, Every Time</string>
-    <string name="viecp_page_reliability_description">Verified specialists, on-time sessions, and consistent support — dependable service you can count on.</string>
+    <string name="viecp_page_reliability_description">Clear analysis, on-time sessions, and consistent support for every stage of your organization.</string>
 
     <string name="viecp_page_guarantee_title">Backed by Guarantees</string>
-    <string name="viecp_page_guarantee_description">Every consultation comes with transparent pricing, a satisfaction guarantee, and support after the session ends.</string>
+    <string name="viecp_page_guarantee_description">Every engagement includes transparent pricing, defined outcomes, and follow-up support after the session.</string>
 
     <string name="next_button_title">Next</string>
     <string name="start_button_title">Start</string>
@@ -51,9 +51,14 @@
     <string name="home_slider_page_counter">%1$02d/%2$02d</string>
 
     <!-- service categories -->
+    <string name="service_category_strategy_title">Strategy</string>
+    <string name="service_category_organization_design_title">Organization Design</string>
+    <string name="service_category_process_improvement_title">Process Improvement</string>
+    <string name="service_category_performance_management_title">Performance</string>
+    <string name="service_category_change_management_title">Change Management</string>
 
     <!-- service details screen -->
-    <string name="service_image_description">Service image</string>
+    <string name="service_image_description">Consulting service image</string>
     <string name="button_book_consultation_text">Book Consultation</string>
     <string name="service_details_state_empty_primary_text">No information available about this service</string>
     <string name="service_details_description_title">Description</string>
@@ -61,11 +66,11 @@
 
     <!-- checkout screen -->
     <string name="checkout_headline">Almost there</string>
-    <string name="checkout_invitation">Leave your name and email – we\'ll confirm the order and keep you posted on delivery.</string>
+    <string name="checkout_invitation">Leave your name and email – we\'ll confirm your consultation and share the next steps.</string>
     <string name="checkout_text_field_first_name">First Name</string>
     <string name="checkout_text_field_last_name">Last Name</string>
     <string name="checkout_text_field_email">Email</string>
-    <string name="checkout_email_supporting_text">The order confirmation goes to this address</string>
+    <string name="checkout_email_supporting_text">The booking confirmation goes to this address</string>
     <string name="checkout_email_error_text">Enter a valid email, for example name@example.com</string>
     <string name="checkout_text_field_date_time">Date &amp; Time</string>
     <string name="checkout_date_time_placeholder">Select date and time</string>
@@ -75,8 +80,8 @@
     <string name="button_confirm_booking_label">Confirm Booking</string>
 
     <!-- checkout dialog -->
-    <string name="checkout_dialog_title">Thank You for Your Order!</string>
-    <string name="checkout_success_message">Your order has been successfully placed. Please hold on; our team will contact you shortly.</string>
+    <string name="checkout_dialog_title">Consultation Booked!</string>
+    <string name="checkout_success_message">Your consultation has been booked. Our team will contact you shortly with the next steps.</string>
     <string name="checkout_dialog_confirm">Done</string>
 
     <!-- bookings screen -->
